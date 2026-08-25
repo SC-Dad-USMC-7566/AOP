@@ -1,0 +1,168 @@
+
+==============================================================================
+PART 0.  Sanity -- transition-ratio form == flux form in stationarity
+==============================================================================
+  trial 0: ratio 0.037216377068  flux 0.037216377068  diff 6.94e-18
+  trial 1: ratio 0.262155632348  flux 0.262155632348  diff 0.00e+00
+  trial 2: ratio 0.040361282364  flux 0.040361282364  diff 0.00e+00
+  trial 3: ratio 0.047738406755  flux 0.047738406755  diff 6.94e-18
+  trial 4: ratio 0.056732537137  flux 0.056732537137  diff 6.94e-18
+
+==============================================================================
+PART 1.  Positive control -- driven ring on Z_4, position coordinates
+==============================================================================
+  N=4, p=0.8, q=0.2;  pi = [0.25 0.25 0.25 0.25]
+  sigma computed        = 0.831776616672 nats/step
+  sigma (p-q)ln(p/q)    = 0.831776616672
+  E = I(X0;X1)          = 0.885891937582 nats
+  E = lnN - H(p,q)      = 0.885891937582
+  brute-force path KL (Convention A):  D_n should equal (n-1)*sigma
+    n= 2  D_n=0.8317766167  D_n/(n-1)=0.831776616672  D_n/n=0.4158883083
+    n= 3  D_n=1.6635532333  D_n/(n-1)=0.831776616672  D_n/n=0.5545177444
+    n= 4  D_n=2.4953298500  D_n/(n-1)=0.831776616672  D_n/n=0.6238324625
+    n= 5  D_n=3.3271064667  D_n/(n-1)=0.831776616672  D_n/n=0.6654212933
+    n= 6  D_n=4.1588830834  D_n/(n-1)=0.831776616672  D_n/n=0.6931471806
+    n= 7  D_n=4.9906597000  D_n/(n-1)=0.831776616672  D_n/n=0.7129513857
+    n= 8  D_n=5.8224363167  D_n/(n-1)=0.831776616672  D_n/n=0.7278045396
+    n= 9  D_n=6.6542129334  D_n/(n-1)=0.831776616672  D_n/n=0.7393569926
+    n=10  D_n=7.4859895500  D_n/(n-1)=0.831776616672  D_n/n=0.7485989550
+    n=11  D_n=8.3177661667  D_n/(n-1)=0.831776616672  D_n/n=0.7561605606
+  -> sigma > 0 and E > 0.  Theorem holds here (canon Figure DM).
+
+==============================================================================
+PART 2.  COUNTEREXAMPLE 1 -- odd variables (Convention B)
+         i.i.d. velocity: E = 0 exactly, sigma > 0.
+==============================================================================
+   P(v=+1)            E          sigma_A          sigma_B      closed form
+      0.50    0.000e+00   0.000000000000   0.000000000000   0.000000000000
+      0.70    0.000e+00   0.000000000000   0.338919144155   0.338919144155
+      0.80    0.000e+00   0.000000000000   0.831776616672   0.831776616672
+      0.90    0.000e+00   0.000000000000   1.757779661869   1.757779661869
+      0.99    0.000e+00   0.000000000000   4.503217453132   4.503217453132
+
+  brute-force path KL, Convention B, pv=0.7 (exact, every n):
+    n= 2  D_n=0.6778382883  D_n/n=0.338919144155
+    n= 3  D_n=1.0167574325  D_n/n=0.338919144155
+    n= 4  D_n=1.3556765766  D_n/n=0.338919144155
+    n= 5  D_n=1.6945957208  D_n/n=0.338919144155
+    n= 6  D_n=2.0335148649  D_n/n=0.338919144155
+    n= 7  D_n=2.3724340091  D_n/n=0.338919144155
+    n= 8  D_n=2.7113531532  D_n/n=0.338919144155
+    n= 9  D_n=3.0502722974  D_n/n=0.338919144155
+    n=10  D_n=3.3891914415  D_n/n=0.338919144155
+    n=11  D_n=3.7281105857  D_n/n=0.338919144155
+    n=12  D_n=4.0670297299  D_n/n=0.338919144155
+  brute-force, Convention A, same process (identically zero):
+    n= 2  D_n=0.000e+00  D_n/n=0.000e+00
+    n= 3  D_n=0.000e+00  D_n/n=0.000e+00
+    n= 4  D_n=0.000e+00  D_n/n=0.000e+00
+    n= 5  D_n=0.000e+00  D_n/n=0.000e+00
+    n= 6  D_n=0.000e+00  D_n/n=0.000e+00
+    n= 7  D_n=3.085e-18  D_n/n=4.406e-19
+    n= 8  D_n=1.109e-17  D_n/n=1.387e-18
+
+  VERDICT: stationary, E = 0 exactly, sigma_B = 0.3389191442 nats/step.
+  Canon scope condition 3 correctly excludes it: the one-point law
+  (0.7,0.3) is NOT invariant under the involution.
+
+==============================================================================
+PART 3.  The increment representation of the SAME driven ring.
+         sigma preserved EXACTLY; E collapses to 0.
+==============================================================================
+  Y_t = X_t - X_{t-1} mod 4, read as +-1 (an increment IS an odd variable)
+    position  repr:  sigma = 0.831776616672   E = 0.885891937582
+    increment repr:  sigma_A = 0.000000000000  sigma_B = 0.831776616672  E = 0.000e+00
+    sigma_B(increments) - sigma(positions) = -1.110e-16
+  -> EXACTLY EQUAL.  A reduction that preserves the physical EPR while
+     sending E to zero.  Canon Fig. DM(b) exhibits coarse-grainings where
+     sigma and E collapse TOGETHER; this one does not.  Scope conditions 1
+     and 3 are therefore not independent.
+
+==============================================================================
+PART 4.  COUNTEREXAMPLE 2 -- the excluded-present split (E_gap).
+         Canon states no split convention.
+==============================================================================
+  X_t = (U_t, U_{t+1}), U i.i.d. Bern(0.5).  pi = [0.25 0.25 0.25 0.25]
+  E (contiguous) = I(X0;X1) = 0.693147180560  > 0
+    E_gap at block length L=1: 0.000e+00
+    E_gap at block length L=2: 0.000e+00
+    E_gap at block length L=3: 0.000e+00
+  sigma (Convention A) = inf
+  -> +inf: the reverse of edge (u,v)->(v,w) exists only if w=u, so the
+     forward path measure is not absolutely continuous w.r.t. its reverse.
+  Under the excluded-present split: sigma > 0, E_gap = 0.  FALSE as stated.
+
+==============================================================================
+PART 4b.  Finite-sigma version of the excluded-present counterexample
+==============================================================================
+  found: U ~ Bern(0.1),  phi(u,v) indexed by 2u+v = (0, 1, 2, 0)
+         D_n/n at n=10:  1.1750940383 nats/step   (finite, > 0)
+           n= 6  D_n=4.9479792435  D_n/n=0.8246632073  D_n/(n-1)=0.9895958487
+           n= 8  D_n=8.1587685948  D_n/n=1.0198460744  D_n/(n-1)=1.1655383707
+           n=10  D_n=11.7509403829  D_n/n=1.1750940383  D_n/(n-1)=1.3056600425
+           n=12  D_n=15.5905705129  D_n/n=1.2992142094  D_n/(n-1)=1.4173245921
+  E_gap = 0 EXACTLY and structurally: X is 1-dependent, so X_{<=-1} is a
+  function of U_{<=0} and X_{>=1} of U_{>=1}, which are independent.
+
+==============================================================================
+PART 5.  MAIN RESULT -- the 'memory floor' is not bounded below.
+  A family satisfying ALL FOUR canon scope conditions with sigma fixed
+  at 1 nat/step and E -> 0.
+==============================================================================
+  (a) closed forms vs direct computation (double precision regime):
+      N        eta     sigma direct     sigma closed       E direct       E closed  pi unif
+      6   3.01e-01     0.2014803285     0.2014803285   4.490062e-02   4.490062e-02     True
+     10   1.01e-03     0.4550994843     0.4550994843   4.132904e-02   4.132904e-02     True
+     25   1.02e-08     0.1832942110     0.1832942110   6.654212e-03   6.654212e-03     True
+     60   7.67e-53              inf     0.2011552453   1.155245e-03   1.155245e-03     True
+     78  2.65e-261              inf     0.5923995534   6.835771e-04   6.835771e-04     True
+
+  (b) brute-force path-KL check on one member (N=6, eta=0.3):
+      closed-form sigma = 0.202370123129
+      n=2  D_n=0.2023701231  D_n/(n-1)=0.202370123129
+      n=3  D_n=0.4047402463  D_n/(n-1)=0.202370123129
+      n=4  D_n=0.6071103694  D_n/(n-1)=0.202370123129
+      n=5  D_n=0.8094804925  D_n/(n-1)=0.202370123129
+      n=6  D_n=1.0118506156  D_n/(n-1)=0.202370123129
+      n=7  D_n=1.2142207388  D_n/(n-1)=0.202370123129
+      n=8  D_n=1.4165908619  D_n/(n-1)=0.202370123129
+
+  (c) hold sigma = 1.000000000 nat/step exactly; drive E down.
+    L=-ln(eta)      N              sigma         E (nats)        sigma/E
+         5.338      6     1.000000000000  1.127098859e-01           8.87
+         9.974      8     1.000000000000  6.495706600e-02          15.39
+         23.31     12     1.000000000000  2.888113248e-02          34.62
+         47.47     17     1.000000000000  1.439059890e-02          69.49
+         103.5     25     1.000000000000  6.654212933e-03         150.28
+         252.8     39     1.000000000000  2.734308405e-03         365.72
+         503.5     55     1.000000000000  1.374837383e-03         727.36
+         987.5     77     1.000000000000  7.014476444e-04        1425.62
+          2480    122     1.000000000000  2.794197180e-04        3578.85
+         1e+04    245     1.000000000000  6.928584895e-05       14432.96
+     1.001e+05    775     1.000000000000  6.924259036e-06      144419.78
+
+  (d) double-precision confirmation for the members with eta > 1e-308:
+      N=   6  sigma_direct=1.000000000000  E_direct=1.127098859e-01  (closed: 1.127098859e-01)
+      N=   8  sigma_direct=1.000000000000  E_direct=6.495706600e-02  (closed: 6.495706600e-02)
+      N=  12  sigma_direct=1.000000047778  E_direct=2.888113248e-02  (closed: 2.888113248e-02)
+      N=  17  sigma_direct=inf  E_direct=1.439059890e-02  (closed: 1.439059890e-02)
+      N=  25  sigma_direct=inf  E_direct=6.654212933e-03  (closed: 6.654212933e-03)
+      N=  39  sigma_direct=inf  E_direct=2.734308405e-03  (closed: 2.734308405e-03)
+      N=  55  sigma_direct=inf  E_direct=1.374837383e-03  (closed: 1.374837383e-03)
+
+  Asymptotics (eta -> 0, sigma held at s):  E -> s * ln2 / (L + ln2) -> 0.
+  Hence  inf { E : sigma >= s } = 0  for every s > 0.
+  Every member is stationary, doubly stochastic, single complete
+  description, configuration-space (all state variables even).
+  It satisfies all four canon scope conditions -- and E is unbounded below.
+
+==============================================================================
+PART 6.  Lemma check: E = 0 <=> i.i.d. (contiguous split)
+==============================================================================
+    random trial 0: E=1.225192e-01  max|P_ij - pi_j|=2.025625e-01
+    random trial 1: E=1.405886e-01  max|P_ij - pi_j|=2.560943e-01
+    random trial 2: E=2.020964e-01  max|P_ij - pi_j|=2.817576e-01
+    random trial 3: E=6.743309e-02  max|P_ij - pi_j|=1.592533e-01
+    i.i.d. chain:     E=3.331e-17  sigma_A=-9.021e-17
+
+DONE.

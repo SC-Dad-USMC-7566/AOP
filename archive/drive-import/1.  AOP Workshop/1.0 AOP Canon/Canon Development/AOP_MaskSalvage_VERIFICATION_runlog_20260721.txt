@@ -1,0 +1,202 @@
+AOP SEMANTIC-MASK SALVAGE DIAGNOSTIC — INDEPENDENT RE-EXECUTION RUN LOG
+Verifier: Claude Cowork (execution seat), independent — did not build this artifact.
+Date: 2026-07-21   Env: python 3.11.15, numpy 2.4.4 (fresh cloud container)
+Deposited script sha256: 20c02ca1243ca6cb8d4f6a174be13d1b2dd338771078132b658a24c82dbaf062
+Files re-run UNMODIFIED: mask_salvage.py (1GPcrRSySofAD_yZeCcPkpB_S53IOkrC_)
+Diagnostic verified against: AOP_MaskSalvage_Diagnostic_20260721.md (1pS-BhdfUrPsqB7BXbcCGVdJHh9ZGXYvq)
+
+############################################################
+# PART 1 — mask_salvage.py, run fresh and unmodified
+############################################################
+====================================================================================================
+MODEL 1 -- CONCENTRATED VIABILITY (path 0-1-2-3-4, S={0}; one edge holds the target)
+viability V = -0.5 log det Sigma[S,S]  (Kolchinsky-Wolpert negentropy on declared set S=[0])
+LOAD edge = (0, 1)   SPECTATOR edge = (3, 4)
+well-defined(edge): interval width <= 0.50 x aggregate weight;  salvageable: LOAD interval disjoint above SPECTATOR interval
+====================================================================================================
+ ctrl | Wagg  | LOAD[lo, shap, hi]         SPEC[lo, shap, hi]        | disjoint  loWidth/Wagg | Omega  condF  VIFmax | wd_load inf SALV
+---------------------------------------------------------------------------------------------------------------------------------------
+ 0.05 | 0.023 | [0.023 0.023 0.023]   [ 0.000  0.000  0.000] |  True       0.00     |  0.000    2.1    1.1 |     Y    Y  YES
+ 0.10 | 0.044 | [0.044 0.044 0.044]   [ 0.000  0.000  0.000] |  True       0.01     |  0.000    2.0    1.1 |     Y    Y  YES
+ 0.20 | 0.079 | [0.077 0.078 0.079]   [ 0.000  0.000  0.000] |  True       0.02     |  0.001    1.8    1.1 |     Y    Y  YES
+ 0.30 | 0.108 | [0.104 0.106 0.108]   [ 0.000  0.000  0.000] |  True       0.04     |  0.002    1.7    1.0 |     Y    Y  YES
+ 0.50 | 0.156 | [0.144 0.150 0.156]   [ 0.000  0.000  0.000] |  True       0.08     |  0.009    1.5    1.0 |     Y    Y  YES
+ 0.75 | 0.203 | [0.178 0.190 0.203]   [ 0.000  0.000  0.000] |  True       0.12     |  0.023    1.4    1.0 |     Y    Y  YES
+ 1.00 | 0.240 | [0.203 0.220 0.240]   [ 0.000  0.000  0.001] |  True       0.16     |  0.042    1.4    1.0 |     Y    Y  YES
+ 1.50 | 0.300 | [0.235 0.264 0.300]   [ 0.000  0.000  0.002] |  True       0.22     |  0.087    1.3    1.0 |     Y    Y  YES
+ 2.00 | 0.345 | [0.255 0.294 0.345]   [ 0.000  0.001  0.004] |  True       0.26     |  0.139    1.2    1.0 |     Y    Y  YES
+ 3.00 | 0.412 | [0.280 0.335 0.412]   [ 0.000  0.001  0.010] |  True       0.32     |  0.248    1.2    1.0 |     Y    Y  YES
+ 5.00 | 0.498 | [0.303 0.380 0.498]   [ 0.000  0.003  0.021] |  True       0.39     |  0.462    1.1    1.0 |     Y    Y  YES
+---------------------------------------------------------------------------------------------------------------------------------------
+  well-defined LOAD (narrow interval): [0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0]
+  discrimination survives (disjoint):  [0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0]
+  SALVAGEABLE (both at once):          [0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0]
+
+====================================================================================================
+MODEL 2 -- COLLECTIVE VIABILITY (two 3-node modules, S={0,1,2}; a collective mode
+            held by 3 substitutable intra-module edges; bridge b=0.15)
+viability V = -0.5 log det Sigma[S,S]  (Kolchinsky-Wolpert negentropy on declared set S=[0, 1, 2])
+LOAD edge = (0, 1)   SPECTATOR edge = (3, 4)
+well-defined(edge): interval width <= 0.50 x aggregate weight;  salvageable: LOAD interval disjoint above SPECTATOR interval
+====================================================================================================
+ ctrl | Wagg  | LOAD[lo, shap, hi]         SPEC[lo, shap, hi]        | disjoint  loWidth/Wagg | Omega  condF  VIFmax | wd_load inf SALV
+---------------------------------------------------------------------------------------------------------------------------------------
+ 0.10 | 0.316 | [0.084 0.088 0.091]   [ 0.000  0.000  0.001] |  True       0.02     |  0.001    3.0    1.2 |     Y    Y  YES
+ 0.20 | 0.518 | [0.144 0.157 0.168]   [ 0.000  0.000  0.001] |  True       0.05     |  0.007    2.7    1.1 |     Y    Y  YES
+ 0.30 | 0.686 | [0.190 0.215 0.235]   [ 0.000  0.001  0.001] |  True       0.07     |  0.018    2.6    1.1 |     Y    Y  YES
+ 0.50 | 0.956 | [0.255 0.307 0.347]   [ 0.000  0.001  0.002] |  True       0.10     |  0.050    2.8    1.1 |     Y    Y  YES
+ 0.75 | 1.215 | [0.310 0.397 0.458]   [ 0.000  0.001  0.003] |  True       0.12     |  0.102    3.4    1.1 |     Y    Y  YES
+ 1.00 | 1.420 | [0.347 0.469 0.549]   [ 0.000  0.001  0.003] |  True       0.14     |  0.161    4.4    1.1 |     Y    Y  YES
+ 1.50 | 1.736 | [0.394 0.580 0.693]   [ 0.000  0.001  0.003] |  True       0.17     |  0.280    6.7    1.1 |     Y    Y  YES
+ 2.00 | 1.975 | [0.424 0.665 0.805]   [ 0.000  0.001  0.004] |  True       0.19     |  0.395    9.7    1.1 |     Y    Y  YES
+ 3.00 | 2.330 | [0.458 0.792 0.973]   [ 0.000  0.001  0.004] |  True       0.22     |  0.600   17.3    1.1 |     Y    Y  YES
+ 5.00 | 2.799 | [0.490 0.962 1.199]   [ 0.000  0.001  0.005] |  True       0.25     |  0.924   39.1    1.1 |     Y    Y  YES
+ 8.00 | 3.244 | [0.511 1.125 1.417]   [ 0.000  0.001  0.005] |  True       0.28     |  1.276   88.4    1.1 |     Y    Y  YES
+---------------------------------------------------------------------------------------------------------------------------------------
+  well-defined LOAD (narrow interval): [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 8.0]
+  discrimination survives (disjoint):  [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 8.0]
+  SALVAGEABLE (both at once):          [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 8.0]
+
+AGGREGATE-MODE CHECK (model 2): whole-module weight (sharp) vs single-edge share (blurs)
+   a    | W(module1 aggregate) | single intra-1 edge interval [lo, hi]  width/Wagg
+  0.30 |       0.623          | [0.190, 0.235]   width/Wmod1 = 0.07
+  1.00 |       1.355          | [0.347, 0.549]   width/Wmod1 = 0.15
+  3.00 |       2.264          | [0.458, 0.973]   width/Wmod1 = 0.23
+  8.00 |       3.177          | [0.511, 1.417]   width/Wmod1 = 0.29
+====================================================================================================
+MODEL 3 -- SEMANTIC-BEYOND-SYNTACTIC (K4, ALL edges equal strength a, S={0,1};
+            discrimination can come only from the declared viability set, not coupling)
+viability V = -0.5 log det Sigma[S,S]  (Kolchinsky-Wolpert negentropy on declared set S=[0, 1])
+LOAD edge = (0, 1)   SPECTATOR edge = (2, 3)
+well-defined(edge): interval width <= 0.50 x aggregate weight;  salvageable: LOAD interval disjoint above SPECTATOR interval
+====================================================================================================
+ ctrl | Wagg  | LOAD[lo, shap, hi]         SPEC[lo, shap, hi]        | disjoint  loWidth/Wagg | Omega  condF  VIFmax | wd_load inf SALV
+---------------------------------------------------------------------------------------------------------------------------------------
+ 0.10 | 0.245 | [0.077 0.084 0.091]   [ 0.000  0.000  0.001] |  True       0.06     |  0.002    4.0    1.3 |     Y    Y  YES
+ 0.20 | 0.420 | [0.126 0.147 0.168]   [ 0.000  0.001  0.004] |  True       0.10     |  0.012    4.0    1.3 |     Y    Y  YES
+ 0.30 | 0.553 | [0.159 0.197 0.235]   [ 0.000  0.003  0.009] |  True       0.14     |  0.029    4.0    1.3 |     Y    Y  YES
+ 0.50 | 0.752 | [0.203 0.275 0.347]   [-0.000  0.008  0.024] |  True       0.19     |  0.077    4.0    1.3 |     Y    Y  YES
+ 0.75 | 0.928 | [0.235 0.347 0.458]   [ 0.000  0.015  0.049] |  True       0.24     |  0.148    4.0    1.3 |     Y    Y  YES
+ 1.00 | 1.060 | [0.255 0.402 0.549]   [ 0.000  0.022  0.077] |  True       0.28     |  0.223    4.0    1.2 |     Y    Y  YES
+ 1.50 | 1.253 | [0.280 0.486 0.693]   [-0.000  0.035  0.134] |  True       0.33     |  0.369    4.0    1.3 |     Y    Y  YES
+ 2.00 | 1.393 | [0.294 0.549 0.805]   [ 0.000  0.045  0.188] |  True       0.37     |  0.503    4.0    1.2 |     Y    Y  YES
+ 3.00 | 1.592 | [0.310 0.641 0.973]   [ 0.000  0.061  0.286] |  True       0.42     |  0.732    4.0    1.3 |     Y    Y  YES
+ 5.00 | 1.846 | [0.323 0.761 1.199]   [-0.000  0.083  0.442] | False       0.47     |  1.083    4.0    1.2 |     Y    Y   no
+ 8.00 | 2.080 | [0.332 0.874 1.417]   [-0.000  0.103  0.613] | False       0.52     |  1.453    4.0    1.3 |     -    Y   no
+---------------------------------------------------------------------------------------------------------------------------------------
+  well-defined LOAD (narrow interval): [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0]
+  discrimination survives (disjoint):  [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0]
+  SALVAGEABLE (both at once):          [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0]
+
+SEMANTIC MARGIN (model 3): (LOAD.lo - SPEC.hi)/Wagg  -- positive = classes resolvably separated
+   a    | margin/Wagg | Omega  | verdict
+  0.10 |    0.312    |  0.002 | resolvably separated
+  0.20 |    0.291    |  0.012 | resolvably separated
+  0.30 |    0.272    |  0.029 | resolvably separated
+  0.50 |    0.237    |  0.077 | resolvably separated
+  0.75 |    0.200    |  0.148 | resolvably separated
+  1.00 |    0.168    |  0.223 | resolvably separated
+  1.50 |    0.117    |  0.369 | resolvably separated
+  2.00 |    0.076    |  0.503 | resolvably separated
+  3.00 |    0.015    |  0.732 | resolvably separated
+  5.00 |   -0.064    |  1.083 | MERGED (unresolvable)
+  8.00 |   -0.135    |  1.453 | MERGED (unresolvable)
+
+THRESHOLD (model 3): interval-merge point a*  (fine sweep)
+   a    | lo_L   hi_S  disjoint | Shapley sep sh_L-sh_S | Omega
+  3.40 | 0.313  0.321  False | interval MERGE here     | Omega=0.812  <== a*
+  a=3.4: Shapley-MEAN load=0.670 spec=0.067 (still separated=True)  Omega=0.81
+  a=8.0: Shapley-MEAN load=0.874 spec=0.103 (still separated=True)  Omega=1.45
+  a=15.0: Shapley-MEAN load=1.028 spec=0.128 (still separated=True)  Omega=2.00
+  => Under the INTERVAL (resolvable per-edge weight) standard the mask degenerates at a*;
+     under the SHAPLEY-MEAN standard a separation persists, but that mean AVERAGES OVER
+     an interval as wide as the weight itself -- it hides the context-sensitivity, it
+     does not remove it. The honest per-edge object is the interval, and it merges at a*.
+
+====================================================================================================
+FINAL VERDICT
+====================================================================================================
+MODEL 1 (concentrated, low-redundancy viability):        salvageable at [0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0]
+MODEL 2 (collective, spectator syntactically distant):   salvageable at [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 8.0]
+MODEL 3 (semantic-beyond-syntactic, equal-strength K4):  salvageable at [0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0]
+MODEL 3 redundancy-dominated (Omega>0.1) at:             [0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 8.0]
+MODEL 3 salvageable AND redundancy-dominated:            [0.75, 1.0, 1.5, 2.0, 3.0]
+
+############################################################
+# PART 2 — Probe A (inversion vs merge) + Probe B (raw, w/ noted harness bug)
+############################################################
+================================================================================================
+PROBE HARNESS -- using deposited functions from mask_salvage.py (unmodified import)
+K4 edges: [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]  S: [0, 1]  LOAD: (0, 1)  SPEC: (2, 3)  BASE: 1.0
+================================================================================================
+
+PROBE A: does the LOAD/SPEC interval ordering ever INVERT, or only MERGE?
+  a     | lo_L   hi_L  | lo_S   hi_S  | sh_L   sh_S  | state
+  ------------------------------------------------------------------------------
+    0.3 | 0.159 0.235 | 0.000 0.009 | 0.197 0.003 | LOAD strictly above (disjoint) ; sh_L>sh_S
+    1.0 | 0.255 0.549 | 0.000 0.077 | 0.402 0.022 | LOAD strictly above (disjoint) ; sh_L>sh_S
+    3.0 | 0.310 0.973 | 0.000 0.286 | 0.641 0.061 | LOAD strictly above (disjoint) ; sh_L>sh_S
+    3.4 | 0.313 1.027 | 0.000 0.321 | 0.670 0.067 | overlap (merged, no strict order) ; sh_L>sh_S
+    5.0 | 0.323 1.199 | -0.000 0.442 | 0.761 0.083 | overlap (merged, no strict order) ; sh_L>sh_S
+    8.0 | 0.332 1.417 | -0.000 0.613 | 0.874 0.103 | overlap (merged, no strict order) ; sh_L>sh_S
+   15.0 | 0.338 1.717 | -0.000 0.873 | 1.028 0.128 | overlap (merged, no strict order) ; sh_L>sh_S
+   25.0 | 0.342 1.966 | -0.000 1.102 | 1.154 0.147 | overlap (merged, no strict order) ; sh_L>sh_S
+   40.0 | 0.343 2.197 | -0.000 1.322 | 1.270 0.163 | overlap (merged, no strict order) ; sh_L>sh_S
+  ------------------------------------------------------------------------------
+  PROBE A verdict:
+    intervals ever merge/overlap:            True
+    intervals ever fully INVERT (lo_S>hi_L): False
+    Shapley MEAN ever inverts (sh_S>sh_L):   False
+    -> pattern is MERGE-ONLY (no inversion)
+
+PROBE B: a* (interval-merge point) under FULL vs RESTRICTED coalition sets
+  full coalition count per edge: 32 (=2^5)
+  FULL set (all 32 coalitions):            a* = no merge in range
+  |C| <= 0 ( 1 coalitions/edge):            a* = NO MERGE in [0.2,20]
+  |C| <= 1 ( 6 coalitions/edge):            a* = NO MERGE in [0.2,20]
+  |C| <= 2 (16 coalitions/edge):            a* = NO MERGE in [0.2,20]
+  |C| <= 3 (26 coalitions/edge):            a* = NO MERGE in [0.2,20]
+  |C| <= 4 (31 coalitions/edge):            a* = NO MERGE in [0.2,20]
+  random  4-coalition sample/edge:          a* = NO MERGE in [0.2,20]
+  random  8-coalition sample/edge:          a* = NO MERGE in [0.2,20]
+  random 16-coalition sample/edge:          a* = NO MERGE in [0.2,20]
+
+  Diagnostic at a=3.4 (the full-set a*): where do the driving endpoints live?
+    SPEC max marginal = 0.3209 at |C|=3  (coalition (0, 2, 3))
+    LOAD min marginal = 0.3134 at |C|=0  (coalition ())
+    -> merge is set by these two extreme endpoints; Probe B tests if dropping them moves a*.
+
+NOTE: In probe.py, find_a_star used 'prev_disj is True' on a numpy.bool_,
+which is never identical to Python True -> it wrongly reported 'no merge'.
+This is a bug in the VERIFIER's probe harness, not in the deposited script.
+Corrected in probe_b.py (bool() coercion). Probe A is unaffected (truthiness).
+
+############################################################
+# PART 3 — Probe B corrected (numpy.bool_ fix)
+############################################################
+==========================================================================================
+PROBE B (corrected): a* under FULL vs RESTRICTED coalition sets  [K4, S={0,1}]
+  full coalitions per edge: 32 = 2^5
+==========================================================================================
+  FULL (all 32):                a* = 3.303   (main-script claim: a* ~ 3.4)
+
+  Restricted by coalition cardinality |C| <= k:
+    |C| <= 0 ( 1 coal/edge):   a* = NO MERGE in [0.2,40]
+    |C| <= 1 ( 6 coal/edge):   a* = NO MERGE in [0.2,40]
+    |C| <= 2 (16 coal/edge):   a* = NO MERGE in [0.2,40]
+    |C| <= 3 (26 coal/edge):   a* = 3.303
+    |C| <= 4 (31 coal/edge):   a* = 3.303
+
+  Restricted by random coalition sample (fixed seeds):
+    random  4-sample/edge:      a* = NO MERGE in [0.2,40]
+    random  8-sample/edge:      a* = NO MERGE in [0.2,40]
+    random 16-sample/edge:      a* = NO MERGE in [0.2,40]
+
+  Which |C| supplies SPEC's MAX marginal (the endpoint that climbs to force merge)?
+   a    | SPEC max @ |C| | LOAD min @ |C| | full-set disjoint?
+    1.0 | 0.0771 @ |C|=3 | 0.2554 @ |C|=0 | True
+    3.0 | 0.2859 @ |C|=3 | 0.3095 @ |C|=0 | True
+    3.4 | 0.3209 @ |C|=3 | 0.3134 @ |C|=0 | False
+    5.0 | 0.4420 @ |C|=3 | 0.3233 @ |C|=1 | False
+   10.0 | 0.7021 @ |C|=3 | 0.3345 @ |C|=1 | False
+   20.0 | 1.0006 @ |C|=3 | 0.3404 @ |C|=1 | False

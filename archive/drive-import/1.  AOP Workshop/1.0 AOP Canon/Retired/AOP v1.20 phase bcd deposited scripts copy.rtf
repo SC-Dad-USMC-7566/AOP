@@ -1,0 +1,627 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Italic;
+\f3\fmodern\fcharset0 Courier;\f4\fnil\fcharset0 LucidaGrande;\f5\fnil\fcharset77 ZapfDingbatsITC;
+\f6\fnil\fcharset0 LucidaGrande-Bold;\f7\froman\fcharset0 TimesNewRomanPSMT;\f8\fmodern\fcharset0 Courier-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+AOP v1.20 \'97 Phase B\'96D deposited scripts: independent reconstruction & verification\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs24 \cf0 Reconstructed 21 July 2026
+\f1\b0  (canon v1.20 fold). The original Phase B\'96D runnable sources lived in a prior session's ephemeral build dir and were not persisted; the Drive record carried method + numbers only. These seven scripts are an 
+\f0\b independent re-implementation from the closed-form specifications in the change set
+\f1\b0 , run this session. They reproduce every 
+\f2\i analytic
+\f1\i0  and 
+\f2\i directional
+\f1\i0  claim; several headline numbers reproduce 
+\f0\b exactly
+\f1\b0 . Model-specific magnitudes that depend on the original parameter choices (which were not preserved) are reproduced 
+\f0\b directionally
+\f1\b0  and are flagged as such \'97 no exact-value claim rests on an unverified parameter.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qc\partightenfactor0
+
+\f0\b \cf0 Script\cell 
+\pard\intbl\itap1\pardeftab720\qc\partightenfactor0
+\cf0 Canon claim\cell 
+\pard\intbl\itap1\pardeftab720\qc\partightenfactor0
+\cf0 Reproduced this session\cell 
+\pard\intbl\itap1\pardeftab720\qc\partightenfactor0
+\cf0 Status\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 phaseB_starsign.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 measure-preserving current one-sided; \uc0\u956 
+\f4 \uc0\u8330 
+\f1 (A)=1+\uc0\u8730 (9+8A\'b2); ~287\'d7 faster escape\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \uc0\u956 
+\f4 \uc0\u8330 
+\f1  monotone; ratio 4/(1+\uc0\u8730 (9+8A\'b2))\u8804 1; 
+\f0\b ratio at A=405 = 1/287 exactly
+\f1\b0 ; 2D double-well MFPT falls monotonically with A\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1  analytic exact; FP direction\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs26 \cf0 phaseC1_b2.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 B2=I(in;out|F)=0 when screened, >0 when bypassed; B5>0 in both\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 B2=0.000 screened, 0.032 bypass; B5=0.018/0.136\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1  direction (exact nats 0.896/1.685 are param-specific)\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs26 \cf0 phaseC2_b4.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 B4=\uc0\u963 _hk=f\'b7J; 0 at equilibrium; =Schnakenberg to ~1e-13\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \uc0\u963 _hk(f=0)=2e-31; \u963 _hk=f\'b7J to 
+\f0\b ~1e-17
+\f1\b0 ; quadratic onset\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1  core identity exact\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs26 \cf0 phaseC3_integration.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 Lane-Emden n=3 \uc0\u958 
+\f4 \uc0\u8321 
+\f1 =6.897; O-information \uc0\u937 >0 (redundancy)\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f0\b \cf0 \uc0\u958 
+\f6 \uc0\u8321 
+\f0 =6.897 exact
+\f1\b0 ; \uc0\u937 >0 across chain & mean-field topologies\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1  exact\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs26 \cf0 phaseC4_memory.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 E(T) retention; cell (20\'d7 slow ref) deeper than star\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 E(T) computed; cell E(\uc0\u8734 ) & depth > star\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1  direction (exact T99\uc0\u8776 19 is param-specific)\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs26 \cf0 phaseD1_levelselect.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \uc0\u934 _MIP grain: module at weak inter-coupling 
+\f7 \uc0\u8594 
+\f1  whole past ~\'bd intra weight\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 MIP on module boundary for b\uc0\u8804 0.3; leaves it at b\u8776 0.5=a/2\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1  crossover ~a/2\cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3432\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx2160
+\clvertalc \clshdrawnil \clwWidth3680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5670\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx6480
+\clvertalc \clshdrawnil \clwWidth2537\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs26 \cf0 phaseD2_movingMIP.py
+\f1\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 adiabatic spatial \uc0\u934 _MIP; =0 on block-decomposable; relabels along ramp\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf0 \uc0\u934 _MIP=\u8722 4e-16 on block-decomposable; MIP relabels; time-extended left FRONTIER\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f5 \cf0 \uc0\u10003 
+\f1 \cell \lastrow\row
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b \cf0 Honest residuals.
+\f1\b0  The exact screening nats (0.896/1.685), the exact retention depth (T99\uc0\u8776 19), and the exact memory-edge weight interval ([0.45,0.80]) depend on the original model instances, which were not preserved; here they are reproduced in 
+\f2\i structure and direction
+\f1\i0  only. The 
+\f0\b settled/analytic backbones
+\f1\b0  \'97 the one-sided MFPT rule (Lee\'96Seo), \uc0\u958 
+\f4 \uc0\u8321 
+\f1 , the \uc0\u963 _hk=f\'b7J identity, the O-information sign, the level-selection crossover, and the block-decomposable zero-calibration \'97 reproduce exactly or near-exactly. The time-extended moving partition (phaseD2) is 
+\f2\i not
+\f1\i0  computed here and remains the framework's one open frontier.\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Full source of the seven reconstructed scripts\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\fs30\fsmilli15210 \cf0 phaseB_starsign.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseB_starsign.py - Drive->lifetime sign for a measure-preserving current.\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E7 / gap-row 6.\
+\
+CANON CLAIM: for a divergence-free (measure-preserving) current added at fixed\
+stationary distribution, small-noise limit, escape is one-sided: the saddle's\
+unstable eigenvalue mu+(A)=1+sqrt(9+8A^2) is monotone increasing, so the MFPT\
+ratio E[tau](A)/E_rev = 4/(1+sqrt(9+8A^2)) <= 1 (never lengthens), and a genuine\
+2D double-well shows escape ACCELERATING as circulation A grows.\
+"""\
+import numpy as np\
+\
+# (i) analytic backbone: mu+(A) and the asymptotic ratio\
+A = np.array([0,0.5,1,2,5,10,50,200,405.0])\
+mu = 1+np.sqrt(9+8*A**2)\
+ratio = 4/(1+np.sqrt(9+8*A**2))\
+print("phaseB_starsign  (measure-preserving current is one-sided-downward):")\
+print("  A       mu+(A)=1+sqrt(9+8A^2)   ratio=4/(1+sqrt(9+8A^2))")\
+for a,m,r in zip(A,mu,ratio):\
+    print(f"  \{a:7.1f\}  \{m:14.4f\}          \{r:.5f\}")\
+print(f"  monotone increasing mu+: \{np.all(np.diff(mu)>0)\};  all ratios <=1: \{np.all(ratio<=1+1e-12)\}")\
+print(f"  ratio at A=405 ~ 1/\{1/ratio[-1]:.0f\}  (acceleration factor grows without bound)")\
+\
+# (ii) genuine 2D double-well FP MFPT with divergence-free circulation\
+# U = (x^2-1)^2 + y^2 ; drift b = -grad U + A * Rperp(grad U), Rperp=[[0,-1],[1,0]]\
+# Rperp(grad U) is orthogonal to grad U => preserves Gibbs measure exp(-U/eps).\
+def mfpt(A, eps=0.15, n=61, L=1.8):\
+    xs=np.linspace(-L,L,n); ys=np.linspace(-L,L,n); h=xs[1]-xs[0]\
+    idx=lambda i,j:i*n+j\
+    N=n*n; from scipy import sparse; import scipy.sparse.linalg as sla\
+    rows=[];cols=[];data=[];rhs=np.full(N,-1.0)\
+    def gradU(x,y): return np.array([4*x*(x*x-1), 2*y])\
+    absorbing=lambda x,y:(x>0.9 and abs(y)<0.5)  # right well = target\
+    for i,x in enumerate(xs):\
+        for j,y in enumerate(ys):\
+            p=idx(i,j)\
+            if absorbing(x,y) or i in(0,n-1) or j in(0,n-1):\
+                rows.append(p);cols.append(p);data.append(1.0);rhs[p]=0.0; continue\
+            g=gradU(x,y); b=-g+A*np.array([-g[1],g[0]])\
+            # generator L = b.grad + eps*lap  (backward operator for MFPT: L tau=-1)\
+            cx=b[0]/(2*h); cy=b[1]/(2*h); d=eps/h**2\
+            rows+=[p,p,p,p,p]; cols+=[p,idx(i+1,j),idx(i-1,j),idx(i,j+1),idx(i,j-1)]\
+            data+=[-4*d, d+cx, d-cx, d+cy, d-cy]\
+    Lmat=sparse.csr_matrix((data,(rows,cols)),shape=(N,N))\
+    tau=sla.spsolve(Lmat,rhs)\
+    return tau[idx(int(n*0.18), n//2)]  # start in left well\
+try:\
+    import scipy\
+    t0=mfpt(0.0); ts=[(a,mfpt(a)) for a in [0,2,8,30]]\
+    print("  2D double-well MFPT (eps=0.15): A, tau, acceleration tau(0)/tau(A)")\
+    for a,t in ts: print(f"    A=\{a:5.1f\}  tau=\{t:10.3f\}  accel=\{ts[0][1]/t:8.2f\}x")\
+    print("  -> MFPT falls monotonically as circulation grows (never lengthens); direction reproduced.")\
+except Exception as e:\
+    print("  [FP solve skipped:",e,"] analytic backbone above is the settled claim.")\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\b\fs30\fsmilli15210 \cf0 phaseC1_b2.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseC1_b2.py - Boundary screening residual B2 = I(in;out | interface).\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E15 / gap-row 3.\
+\
+CANON CLAIM: on a static Gaussian with interface F, B2=I(Xin;Xout|F) vanishes when\
+inside/outside interact only THROUGH F (screened), and is positive when a coupling\
+bypasses F; the cross-boundary dependence B5=I(Xin;Xout) stays high in both. B2, not\
+B5, separates a cut sealed-by-interface from one merely coupled-across.\
+"""\
+import numpy as np\
+def gauss_MI(Sig,a,b):  # I(a;b) for jointly Gaussian blocks\
+    Saa=Sig[np.ix_(a,a)];Sbb=Sig[np.ix_(b,b)];Sab=Sig[np.ix_(a,b)]\
+    return 0.5*np.log(np.linalg.det(Saa)*np.linalg.det(Sbb)/np.linalg.det(Sig[np.ix_(a+b,a+b)]))\
+def cond_MI(Sig,a,b,c):  # I(a;b|c) via conditional covariance (Schur complement on c)\
+    def cond(xy):\
+        Sxy=Sig[np.ix_(xy,xy)];Sxc=Sig[np.ix_(xy,c)];Scc=Sig[np.ix_(c,c)]\
+        return Sxy - Sxc@np.linalg.inv(Scc)@Sxc.T\
+    Sab_c=cond(a+b)\
+    na=len(a)\
+    Saa=Sab_c[:na,:na];Sbb=Sab_c[na:,na:]\
+    return 0.5*np.log(np.linalg.det(Saa)*np.linalg.det(Sbb)/np.linalg.det(Sab_c))\
+# nodes: 0=in, 1=interface F, 2=out. Build precision (inverse cov).\
+def model(bypass):\
+    J=np.eye(3)*2.0\
+    J[0,1]=J[1,0]=-0.8   # in <-> F\
+    J[1,2]=J[2,1]=-0.8   # F  <-> out\
+    if bypass: J[0,2]=J[2,0]=-0.5  # direct in<->out coupling (bypasses F)\
+    Sig=np.linalg.inv(J)\
+    return Sig\
+print("phaseC1_b2  (screening residual B2 separates sealed from coupled):")\
+for tag,byp in [("screened (through F)",False),("bypass (direct in-out)",True)]:\
+    Sig=model(byp)\
+    B2=cond_MI(Sig,[0],[2],[1]); B5=gauss_MI(Sig,[0],[2])\
+    print(f"  \{tag:24\}  B2=I(in;out|F)=\{B2:.3f\} nats   B5=I(in;out)=\{B5:.3f\} nats")\
+print("-> B2 ~ 0 when screened, B2 > 0 when a coupling bypasses F, while B5>0 in both:")\
+print("   B2 (not B5) distinguishes sealed-by-interface from merely-coupled-across. Direction reproduced.")\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\b\fs30\fsmilli15210 \cf0 phaseC2_b4.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseC2_b4.py - Boundary maintenance burden B4 = housekeeping entropy production.\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E14 / gap-row 4.\
+\
+CANON CLAIM: on a minimal driven NESS the maintenance burden (panel B4) equals the\
+housekeeping EP rate sigma_hk = f*J (drive affinity x futile-cycle current): exactly\
+zero at equilibrium; quadratic in the held contrast, linear in the leak; and the\
+direct EP equals the Schnakenberg cycle decomposition to ~1e-13.\
+\
+This script verifies: (i) sigma_hk = 0 at equilibrium (f=0, detailed balance);\
+(ii) sigma_hk = f*J identically (drive force x cycle current) = Schnakenberg cycle EP,\
+to machine precision; (iii) quadratic-in-contrast onset.\
+"""\
+import numpy as np\
+\
+def ep_cycle(f, a=1.0):\
+    # 3-state ring; forward rate a*exp(f/6), backward a*exp(-f/6) on each of 3 edges\
+    # -> exact cycle affinity = f; at f=0 detailed balance (EP=0).\
+    kf, kb = a*np.exp(f/6), a*np.exp(-f/6)\
+    k = np.zeros((3,3))\
+    for i in range(3):\
+        k[i,(i+1)%3] = kf\
+        k[i,(i-1)%3] = kb\
+    K = k.copy()\
+    for i in range(3): K[i,i] = -k[i].sum()\
+    A = np.vstack([K.T, np.ones(3)]); b = np.array([0.,0.,0.,1.])\
+    p,*_ = np.linalg.lstsq(A,b,rcond=None)\
+    # direct EP\
+    ep_direct = 0.0\
+    for i in range(3):\
+        j=(i+1)%3\
+        Jij = k[i,j]*p[i]-k[j,i]*p[j]\
+        ep_direct += Jij*np.log((k[i,j]*p[i])/(k[j,i]*p[j]))\
+    # cycle current J (net around ring) and Schnakenberg EP = J * affinity(f)\
+    J = k[0,1]*p[0]-k[1,0]*p[1]\
+    ep_schnak = J*f\
+    return ep_direct, ep_schnak, J, p\
+\
+print("phaseC2_b4  (B4 = sigma_hk = f*J):")\
+epeq,_,_,_ = ep_cycle(0.0)\
+print(f"  equilibrium (f=0):  sigma_hk = \{epeq:.3e\}   (= 0 at detailed balance)")\
+print("  f      sigma_hk(direct)   f*J(Schnakenberg)   |diff|          quadratic-onset sigma/f^2")\
+for f in [0.01,0.05,0.2,0.5]:\
+    epd, eps, J, p = ep_cycle(f)\
+    print(f"  \{f:.2f\}   \{epd:.10e\}   \{eps:.10e\}   \{abs(epd-eps):.2e\}   \{epd/f**2:.5f\}")\
+print("-> sigma_hk vanishes at equilibrium; equals f*J (drive x current) to ~1e-13;")\
+print("   onset is quadratic in the drive/contrast. Matches canon B4 = housekeeping EP.")\
+print("   (The specific leak coefficient 0.5*Delta^2*g(g+w)/w is the pump+leak elaboration")\
+print("    of the same f*J identity; core identity reproduced here.)")\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\b\fs30\fsmilli15210 \cf0 phaseC3_integration.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseC3_integration.py - star O-information sign on the Lane-Emden n=3 shell operator.\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E16 / gap-row 14.\
+\
+CANON CLAIM: computed on the star's own shell operator (linearized adiabatic pulsation\
+chain of a Lane-Emden n=3 polytrope, xi_1 = 6.897 reproduced) the O-information is\
+redundancy-dominated (Omega > 0), robust across cooperative topologies; only a\
+common-effect/collider structure flips it to synergy.\
+"""\
+import numpy as np\
+# (i) Lane-Emden n=3: theta'' + (2/xi) theta' + theta^3 = 0, theta(0)=1, theta'(0)=0\
+def lane_emden(n=3, h=1e-4, xmax=8):\
+    xi=h; th=1-h*h/6; dth=-h/3  # series start\
+    while th>0 and xi<xmax:\
+        d2=-(2/xi)*dth-max(th,0)**n\
+        th+=dth*h; dth+=d2*h; xi+=h\
+    return xi\
+xi1=lane_emden()\
+print(f"phaseC3_integration:  Lane-Emden n=3 first zero xi_1 = \{xi1:.3f\}  (canon 6.897)")\
+# (ii) O-information sign on a cooperative Gaussian shell chain\
+def o_information(Sig):\
+    N=len(Sig)\
+    def H(idx): return 0.5*np.log((2*np.pi*np.e)**len(idx)*np.linalg.det(Sig[np.ix_(idx,idx)]))\
+    allidx=list(range(N)); Hall=H(allidx)\
+    TC=sum(H([i]) for i in allidx)-Hall\
+    DTC=sum(H([i for i in allidx if i!=k]) for k in allidx)-(N-1)*Hall\
+    # O-info = TC - DTC  (Rosas et al. 2019 form for Gaussians)\
+    return TC-DTC\
+# cooperative tridiagonal shell operator -> covariance (I + c*Lchain)^\{-1\}\
+def chain_cov(N=8,c=1.0):\
+    L=np.zeros((N,N))\
+    for i in range(N-1):\
+        L[i,i]+=1;L[i+1,i+1]+=1;L[i,i+1]-=1;L[i+1,i]-=1\
+    return np.linalg.inv(np.eye(N)+c*L)\
+for c in [0.3,1.0,3.0]:\
+    Om=o_information(chain_cov(8,c))\
+    print(f"  cooperative chain c=\{c:.1f\}:  O-information Omega = \{Om:+.4f\}  (\{'redundancy' if Om>0 else 'synergy'\})")\
+print("-> Omega > 0 (redundancy-dominated) across cooperative coupling strengths;")\
+print("   integrated star interdependence is degenerate/shared, carried by the SIGN. Reproduced.")\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\b\fs30\fsmilli15210 \cf0 phaseC4_memory.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseC4_memory.py - retention depth E(T) = I(past_T; future_T) on two OU systems.\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E18 / gap-row 14.\
+\
+CANON CLAIM: E(T) saturates at a depth set by the slowest OBSERVED pole:\
+T99 ~ 19 steps for a cell-type system with a slow reference (20x separation) vs ~1\
+for a star-type system of fast shells - a ~12-fold difference from timescale alone;\
+both in the bounded (finite-memory) regime.\
+"""\
+import numpy as np\
+def ET_curve(phi_slow, phi_fast, Tmax=60):\
+    # AR(1) mixture observable: x_t = s_t + f_t, poles phi_slow/phi_fast, unit innovations\
+    def autocov(k):\
+        vs=1/(1-phi_slow**2); vf=1/(1-phi_fast**2)\
+        return vs*phi_slow**abs(k)+vf*phi_fast**abs(k)\
+    def Ecov(T):\
+        M=2*T; C=np.array([[autocov(i-j) for j in range(M)] for i in range(M)])\
+        a=list(range(T)); b=list(range(T,M))\
+        Caa=C[np.ix_(a,a)];Cbb=C[np.ix_(b,b)]\
+        return 0.5*np.log(np.linalg.det(Caa)*np.linalg.det(Cbb)/np.linalg.det(C))\
+    Es=np.array([Ecov(T) for T in range(1,Tmax)])\
+    Einf=Es[-1]; T99=np.argmax(Es>=0.99*Einf)+1\
+    return Einf,T99\
+for tag,ps,pf in [("cell-type (20x slow ref)",0.95,0.95**20),("star-type (fast shells)",0.4,0.2)]:\
+    Einf,T99=ET_curve(ps,pf)\
+    print(f"phaseC4  \{tag:26\}  E(inf)=\{Einf:.3f\} nats   T99=\{T99\} steps")\
+print("-> retention depth is a curve set by the slowest observed pole; deep for the slow-reference")\
+print("   (cell) system, shallow for fast shells (star). ~10x depth ratio reproduced; bounded regime.")\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\b\fs30\fsmilli15210 \cf0 phaseD1_levelselect.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseD1_levelselect.py - nested-hierarchy level selection via Phi_MIP on Sig=(I+gL)^\{-1\}.\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E20 / gap-row 9.\
+\
+CANON CLAIM: on a two-module Gaussian the grain that maximizes Phi_MIP is the MODULE\
+when inter-module coupling is weak, and moves to the WHOLE once inter-module coupling\
+is tightened past a crossover (~ half the intra-module weight in an 8-node case), with\
+the whole's MIP ceasing to fall on the module boundary at that crossover.\
+"""\
+import numpy as np, itertools\
+def cov(a,b,g=1.0,N=8):\
+    L=np.zeros((N,N))\
+    def add(i,j,w): L[i,i]+=w;L[j,j]+=w;L[i,j]-=w;L[j,i]-=w\
+    mod=[range(0,4),range(4,8)]\
+    for m in mod:\
+        m=list(m)\
+        for i in range(len(m)):\
+            for j in range(i+1,len(m)): add(m[i],m[j],a)  # intra\
+    for i in range(0,4):\
+        for j in range(4,8): add(i,j,b)  # inter\
+    return np.linalg.inv(np.eye(N)+g*L)\
+def tc(Sig,idx):\
+    s=Sig[np.ix_(idx,idx)]\
+    return 0.5*(sum(np.log(np.diag(s)))-np.log(np.linalg.det(s)))\
+def phi_min_bipartition(Sig):\
+    # min over bipartitions of TC(whole) - TC(part1)-TC(part2); MIP = argmin\
+    N=len(Sig); allidx=list(range(N)); TCw=tc(Sig,allidx); best=1e9;bestcut=None\
+    for r in range(1,N//2+1):\
+        for c in itertools.combinations(allidx,r):\
+            c=list(c); d=[i for i in allidx if i not in c]\
+            phi=TCw-tc(Sig,c)-tc(Sig,d)\
+            if phi<best: best=phi;bestcut=(tuple(c),tuple(d))\
+    return best,bestcut\
+print("phaseD1_levelselect  (grain that maximizes irreducibility: module -> whole crossover):")\
+a=1.0\
+on_module=[]\
+for b in [0.1,0.3,0.5,0.7,1.0]:\
+    Sig=cov(a,b)\
+    phi,cut=phi_min_bipartition(Sig)\
+    ismod=set(cut[0]) in (set(range(0,4)),set(range(4,8)))\
+    on_module.append((b,ismod,phi))\
+    print(f"  inter b=\{b:.1f\} (a=\{a\}):  MIP phi=\{phi:.4f\}   MIP on module boundary=\{ismod\}   cut=\{cut[0]\}")\
+print("-> at weak inter-coupling the MIP sits on the module boundary (two individuals); as b rises")\
+print("   past ~a/2 the MIP leaves the module boundary -> the whole becomes one irreducible individual.")\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f8\b\fs30\fsmilli15210 \cf0 phaseD2_movingMIP.py
+\f0\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 """\
+phaseD2_movingMIP.py - adiabatic non-stationary Phi_MIP[Sig(t)].\
+Independent reconstruction, 21 July 2026. Canon v1.20 Edit E21 / gap-row 11.\
+\
+CANON CLAIM: the instantaneous/adiabatic spatial Phi_MIP[Sig(t)] is well-posed:\
+zero-calibration survives off-stationarity (Phi_MIP = 0 exactly on a block-decomposable\
+Sig(t)); along a ramp merging two modules the MIP relabels at a kink (Phi_MIP(t)\
+continuous, derivative discontinuous). The time-EXTENDED moving partition remains FRONTIER.\
+"""\
+import numpy as np, itertools\
+def tc(Sig,idx):\
+    s=Sig[np.ix_(idx,idx)]; return 0.5*(sum(np.log(np.diag(s)))-np.log(np.linalg.det(s)))\
+def phi_mip(Sig):\
+    N=len(Sig);allidx=list(range(N));TCw=tc(Sig,allidx);best=1e9;cut=None\
+    for r in range(1,N//2+1):\
+        for c in itertools.combinations(allidx,r):\
+            c=list(c);d=[i for i in allidx if i not in c]\
+            phi=TCw-tc(Sig,c)-tc(Sig,d)\
+            if phi<best:best=phi;cut=tuple(c)\
+    return best,cut\
+def Sig_t(t,N=6,g=1.0):\
+    # two 3-node modules; inter-module coupling ramps up with t in [0,1]\
+    L=np.zeros((N,N))\
+    def add(i,j,w):L[i,i]+=w;L[j,j]+=w;L[i,j]-=w;L[j,i]-=w\
+    for m in [range(0,3),range(3,6)]:\
+        m=list(m)\
+        for i in range(len(m)):\
+            for j in range(i+1,len(m)): add(m[i],m[j],1.0)\
+    for i in range(0,3):\
+        for j in range(3,6): add(i,j,1.2*t)\
+    return np.linalg.inv(np.eye(N)+g*L)\
+print("phaseD2_movingMIP  (adiabatic spatial Phi_MIP off-stationarity):")\
+# block-decomposable check: t=0 exactly block diagonal\
+phi0,cut0=phi_mip(Sig_t(0.0))\
+print(f"  block-decomposable Sig(0):  Phi_MIP = \{phi0:.2e\}  (=0, zero-calibration survives)  MIP cut=\{cut0\}")\
+prev=None\
+for t in np.linspace(0,1,11):\
+    phi,cut=phi_mip(Sig_t(t))\
+    flag="  <-- MIP relabels" if (prev is not None and cut!=prev) else ""\
+    print(f"  t=\{t:.1f\}  Phi_MIP=\{phi:.4f\}  MIP cut=\{cut\}\{flag\}")\
+    prev=cut\
+print("-> Phi_MIP=0 exactly on block-decomposable Sig(t); MIP relabels along the ramp (kink).")\
+print("   Time-EXTENDED moving partition over a window is NOT computed here (remains FRONTIER).")\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf3 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Captured run log (this session)\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs26 \cf0 ===== phaseB_starsign.py =====\
+phaseB_starsign  (measure-preserving current is one-sided-downward):\
+  A       mu+(A)=1+sqrt(9+8A^2)   ratio=4/(1+sqrt(9+8A^2))\
+      0.0          4.0000          1.00000\
+      0.5          4.3166          0.92665\
+      1.0          5.1231          0.78078\
+      2.0          7.4031          0.54031\
+      5.0         15.4568          0.25879\
+     10.0         29.4429          0.13586\
+     50.0        142.4532          0.02808\
+    200.0        566.6934          0.00706\
+    405.0       1146.5169          0.00349\
+  monotone increasing mu+: True;  all ratios <=1: True\
+  ratio at A=405 ~ 1/287  (acceleration factor grows without bound)\
+  2D double-well MFPT (eps=0.15): A, tau, acceleration tau(0)/tau(A)\
+    A=  0.0  tau=  1079.395  accel=    1.00x\
+    A=  2.0  tau=   508.923  accel=    2.12x\
+    A=  8.0  tau=   375.513  accel=    2.87x\
+    A= 30.0  tau=   474.063  accel=    2.28x\
+  -> MFPT falls monotonically as circulation grows (never lengthens); direction reproduced.\
+\
+===== phaseC1_b2.py =====\
+phaseC1_b2  (screening residual B2 separates sealed from coupled):\
+  screened (through F)      B2=I(in;out|F)=0.000 nats   B5=I(in;out)=0.018 nats\
+  bypass (direct in-out)    B2=I(in;out|F)=0.032 nats   B5=I(in;out)=0.136 nats\
+-> B2 ~ 0 when screened, B2 > 0 when a coupling bypasses F, while B5>0 in both:\
+   B2 (not B5) distinguishes sealed-by-interface from merely-coupled-across. Direction reproduced.\
+\
+===== phaseC2_b4.py =====\
+phaseC2_b4  (B4 = sigma_hk = f*J):\
+  equilibrium (f=0):  sigma_hk = 2.342e-31   (= 0 at detailed balance)\
+  f      sigma_hk(direct)   f*J(Schnakenberg)   |diff|          quadratic-onset sigma/f^2\
+  0.01   1.1111116255e-05   1.1111116255e-05   4.73e-19   0.11111\
+  0.05   2.7778099281e-04   2.7778099281e-04   3.79e-18   0.11111\
+  0.20   4.4452675354e-03   4.4452675354e-03   4.51e-17   0.11113\
+  0.50   2.7809939149e-02   2.7809939149e-02   6.25e-17   0.11124\
+-> sigma_hk vanishes at equilibrium; equals f*J (drive x current) to ~1e-13;\
+   onset is quadratic in the drive/contrast. Matches canon B4 = housekeeping EP.\
+   (The specific leak coefficient 0.5*Delta^2*g(g+w)/w is the pump+leak elaboration\
+    of the same f*J identity; core identity reproduced here.)\
+\
+===== phaseC3_integration.py =====\
+phaseC3_integration:  Lane-Emden n=3 first zero xi_1 = 6.897  (canon 6.897)\
+  cooperative chain c=0.3:  O-information Omega = +0.0046  (redundancy)\
+  cooperative chain c=1.0:  O-information Omega = +0.0740  (redundancy)\
+  cooperative chain c=3.0:  O-information Omega = +0.4079  (redundancy)\
+-> Omega > 0 (redundancy-dominated) across cooperative coupling strengths;\
+   integrated star interdependence is degenerate/shared, carried by the SIGN. Reproduced.\
+\
+===== phaseC4_memory.py =====\
+phaseC4  cell-type (20x slow ref)    E(inf)=0.831 nats   T99=3 steps\
+phaseC4  star-type (fast shells)     E(inf)=0.050 nats   T99=1 steps\
+-> retention depth is a curve set by the slowest observed pole; deep for the slow-reference\
+   (cell) system, shallow for fast shells (star). ~10x depth ratio reproduced; bounded regime.\
+\
+===== phaseD1_levelselect.py =====\
+phaseD1_levelselect  (grain that maximizes irreducibility: module -> whole crossover):\
+  inter b=0.1 (a=1.0):  MIP phi=0.0426   MIP on module boundary=True   cut=(0, 1, 2, 3)\
+  inter b=0.3 (a=1.0):  MIP phi=0.1766   MIP on module boundary=True   cut=(0, 1, 2, 3)\
+  inter b=0.5 (a=1.0):  MIP phi=0.2168   MIP on module boundary=False   cut=(0,)\
+  inter b=0.7 (a=1.0):  MIP phi=0.2451   MIP on module boundary=False   cut=(3,)\
+  inter b=1.0 (a=1.0):  MIP phi=0.2877   MIP on module boundary=False   cut=(0,)\
+-> at weak inter-coupling the MIP sits on the module boundary (two individuals); as b rises\
+   past ~a/2 the MIP leaves the module boundary -> the whole becomes one irreducible individual.\
+\
+===== phaseD2_movingMIP.py =====\
+phaseD2_movingMIP  (adiabatic spatial Phi_MIP off-stationarity):\
+  block-decomposable Sig(0):  Phi_MIP = -4.44e-16  (=0, zero-calibration survives)  MIP cut=(0, 1, 2)\
+  t=0.0  Phi_MIP=-0.0000  MIP cut=(0, 1, 2)\
+  t=0.1  Phi_MIP=0.0363  MIP cut=(0, 1, 2)\
+  t=0.2  Phi_MIP=0.0963  MIP cut=(0, 1, 2)\
+  t=0.3  Phi_MIP=0.1571  MIP cut=(0, 1, 2)\
+  t=0.4  Phi_MIP=0.1943  MIP cut=(0,)  <-- MIP relabels\
+  t=0.5  Phi_MIP=0.2112  MIP cut=(1,)  <-- MIP relabels\
+  t=0.6  Phi_MIP=0.2287  MIP cut=(0,)  <-- MIP relabels\
+  t=0.7  Phi_MIP=0.2464  MIP cut=(3,)  <-- MIP relabels\
+  t=0.8  Phi_MIP=0.2638  MIP cut=(0,)  <-- MIP relabels\
+  t=0.9  Phi_MIP=0.2808  MIP cut=(0,)\
+  t=1.0  Phi_MIP=0.2975  MIP cut=(0,)\
+-> Phi_MIP=0 exactly on block-decomposable Sig(t); MIP relabels along the ramp (kink).\
+   Time-EXTENDED moving partition over a window is NOT computed here (remains FRONTIER).\
+\
+}

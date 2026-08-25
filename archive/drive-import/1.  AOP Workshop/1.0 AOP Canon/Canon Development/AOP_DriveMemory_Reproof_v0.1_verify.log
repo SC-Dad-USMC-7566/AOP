@@ -1,0 +1,78 @@
+
+==============================================================================
+A.  Part-5 family, recomputed in extended precision straight from P
+==============================================================================
+  For each N, solve for L so sigma = 1 nat/step EXACTLY, then read off E.
+  'direct' columns are computed from the matrix, not from a closed form.
+      N    L=-ln(eta)         sigma direct         E direct   stoch err     min P_ij
+      6       5.33822    1.000000000000006     0.1127098859    0.00e+00    0.0008007
+      8       9.97404    1.000000000000003      0.064957066    0.00e+00     5.824e-6
+     12       23.3069                  1.0    0.02888113248    0.00e+00    6.292e-12
+     17       47.4735    1.000000000000122     0.0143905989    0.00e+00    1.419e-22
+     25       103.474    1.000000000000001   0.006654212933    0.00e+00    4.614e-47
+     39       252.807                  1.0   0.002734308405    0.00e+00   4.133e-112
+     55       503.474                  1.0   0.001374837383   8.81e-280   4.017e-221
+     77       987.474   0.9999999999999999  0.0007014476444    0.00e+00   1.816e-431
+    122       2479.97    1.000000000000006   0.000279419718    0.00e+00  7.496e-1080
+
+  Every P_ij > 0 strictly (irreducible, aperiodic, full support);
+  pi = uniform exactly; sigma = 1 nat/step exactly; E falls without bound.
+
+  Against the asymptote E ~ ln2 / (L + ln2):
+    N=   6  E=1.12709886e-01   ln2/(L+ln2)=1.14923659e-01   ratio=0.980737
+    N=   8  E=6.49570660e-02   ln2/(L+ln2)=6.49793785e-02   ratio=0.999657
+    N=  12  E=2.88811325e-02   ln2/(L+ln2)=2.88811325e-02   ratio=1.000000
+    N=  17  E=1.43905989e-02   ln2/(L+ln2)=1.43905989e-02   ratio=1.000000
+    N=  25  E=6.65421293e-03   ln2/(L+ln2)=6.65421293e-03   ratio=1.000000
+    N=  39  E=2.73430840e-03   ln2/(L+ln2)=2.73430840e-03   ratio=1.000000
+    N=  55  E=1.37483738e-03   ln2/(L+ln2)=1.37483738e-03   ratio=1.000000
+    N=  77  E=7.01447644e-04   ln2/(L+ln2)=7.01447644e-04   ratio=1.000000
+    N= 122  E=2.79419718e-04   ln2/(L+ln2)=2.79419718e-04   ratio=1.000000
+
+  Extrapolation at fixed sigma = 1 nat/step (N ~ sqrt(6L)):
+    L=   1e+04  N ~        245.0 states  ->  E ~ 6.931e-05 nats
+    L=   1e+06  N ~       2449.5 states  ->  E ~ 6.931e-07 nats
+    L=   1e+08  N ~      24494.9 states  ->  E ~ 6.931e-09 nats
+    L=   1e+12  N ~    2449489.7 states  ->  E ~ 6.931e-13 nats
+
+==============================================================================
+B.  Finite-sigma excluded-present counterexample -- convergence
+==============================================================================
+
+  U ~ Bern(0.25),  phi(u,v) indexed by 2u+v = (0, 1, 2, 0)
+  (E_gap = I(X_<=-1 ; X_>=1) = 0 EXACTLY: X is 1-dependent, past is a
+   function of U_<=0 and future of U_>=1, which are independent.)
+    n= 9  D_n=  4.87440473  D_n/n=0.54160053  D_n - D_(n-1) = 0.67301234
+    n=10  D_n=  5.53197003  D_n/n=0.55319700  D_n - D_(n-1) = 0.65756531
+    n=11  D_n=  6.17407416  D_n/n=0.56127947  D_n - D_(n-1) = 0.64210413
+    n=12  D_n=  6.80167980  D_n/n=0.56680665  D_n - D_(n-1) = 0.62760564
+    n=13  D_n=  7.41623584  D_n/n=0.57047968  D_n - D_(n-1) = 0.61455604
+    n=14  D_n=  8.01937324  D_n/n=0.57281237  D_n - D_(n-1) = 0.60313740
+    increment sequence -> geometric ratio 0.8750, Aitken limit sigma ~ 0.523193 nats/step
+    => sigma is FINITE and STRICTLY POSITIVE, with E_gap = 0.
+
+  U ~ Bern(0.1),  phi(u,v) indexed by 2u+v = (0, 1, 2, 0)
+  (E_gap = I(X_<=-1 ; X_>=1) = 0 EXACTLY: X is 1-dependent, past is a
+   function of U_<=0 and future of U_>=1, which are independent.)
+    n= 9  D_n=  9.91654824  D_n/n=1.10183869  D_n - D_(n-1) = 1.75777964
+    n=10  D_n= 11.75094038  D_n/n=1.17509404  D_n - D_(n-1) = 1.83439214
+    n=11  D_n= 13.64662252  D_n/n=1.24060205  D_n - D_(n-1) = 1.89568213
+    n=12  D_n= 15.59057051  D_n/n=1.29921421  D_n - D_(n-1) = 1.94394800
+    n=13  D_n= 17.57175218  D_n/n=1.35167324  D_n - D_(n-1) = 1.98118166
+    n=14  D_n= 19.58085909  D_n/n=1.39863279  D_n - D_(n-1) = 2.00910692
+    increment sequence -> geometric ratio 0.7500, Aitken limit sigma ~ 2.092883 nats/step
+    => sigma is FINITE and STRICTLY POSITIVE, with E_gap = 0.
+
+  U ~ Bern(0.4),  phi(u,v) indexed by 2u+v = (0, 1, 2, 0)
+  (E_gap = I(X_<=-1 ; X_>=1) = 0 EXACTLY: X is 1-dependent, past is a
+   function of U_<=0 and future of U_>=1, which are independent.)
+    n= 9  D_n=  0.78683845  D_n/n=0.08742649  D_n - D_(n-1) = 0.09282003
+    n=10  D_n=  0.87602914  D_n/n=0.08760291  D_n - D_(n-1) = 0.08919069
+    n=11  D_n=  0.96260658  D_n/n=0.08750969  D_n - D_(n-1) = 0.08657744
+    n=12  D_n=  1.04736030  D_n/n=0.08728003  D_n - D_(n-1) = 0.08475372
+    n=13  D_n=  1.13086919  D_n/n=0.08698994  D_n - D_(n-1) = 0.08350889
+    n=14  D_n=  1.21354220  D_n/n=0.08668159  D_n - D_(n-1) = 0.08267301
+    increment sequence -> geometric ratio 0.6715, Aitken limit sigma ~ 0.080965 nats/step
+    => sigma is FINITE and STRICTLY POSITIVE, with E_gap = 0.
+
+DONE.

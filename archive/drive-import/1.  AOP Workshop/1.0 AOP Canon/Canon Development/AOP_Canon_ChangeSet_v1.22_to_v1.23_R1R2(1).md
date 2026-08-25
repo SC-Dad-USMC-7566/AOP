@@ -1,0 +1,1 @@
+$(cat /home/claude/AOP_Canon_ChangeSet_v1.22_to_v1.23_R1R2.md)

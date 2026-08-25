@@ -1,0 +1,277 @@
+{
+ "A_extra_not_in_aop": [],
+ "A_missed_of_13": [],
+ "A_recovers_of_13": 13,
+ "B_extra_not_in_aop": [],
+ "B_missed_of_13": [
+  "cydA/cbdA",
+  "cydA/cbdB",
+  "cydB/cbdA",
+  "cydB/cbdB"
+ ],
+ "B_recovers_of_13": 9,
+ "aop_13_pairs": [
+  "acnB/acnA",
+  "cydA/cbdA",
+  "cydA/cbdB",
+  "cydB/cbdA",
+  "cydB/cbdB",
+  "manX/crr",
+  "manY/crr",
+  "manZ/crr",
+  "pitB/pitA",
+  "ppc/aceA",
+  "puuA/glnA",
+  "rpiA/rpiB",
+  "tktB/tktA"
+ ],
+ "aop_subset_of_A": true,
+ "n_viable_genes": 90,
+ "provenance": {
+  "cobra": "0.31.1",
+  "model_md5": "2fd9c214652195707526448954b88696",
+  "tie_tolerance": 1e-06,
+  "wt_growth": 0.873922
+ },
+ "ranking_check_C": [
+  {
+   "joint_drop": 1.0,
+   "pair": "acnB/acnA"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "puuA/glnA"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "manX/crr"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "manY/crr"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "manZ/crr"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "tktB/tktA"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "rpiA/rpiB"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "pitB/pitA"
+  },
+  {
+   "joint_drop": 1.0,
+   "pair": "ppc/aceA"
+  },
+  {
+   "joint_drop": 0.7578,
+   "pair": "cydA/cbdA"
+  },
+  {
+   "joint_drop": 0.7578,
+   "pair": "cydA/cbdB"
+  },
+  {
+   "joint_drop": 0.7578,
+   "pair": "cydB/cbdA"
+  },
+  {
+   "joint_drop": 0.7578,
+   "pair": "cydB/cbdB"
+  }
+ ],
+ "screenA_matched_threshold_ge0.5": {
+  "n": 13,
+  "pairs": [
+   {
+    "g1": "b0118",
+    "g2": "b1276",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "acnB",
+    "name2": "acnA"
+   },
+   {
+    "g1": "b1297",
+    "g2": "b3870",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "puuA",
+    "name2": "glnA"
+   },
+   {
+    "g1": "b1817",
+    "g2": "b2417",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "manX",
+    "name2": "crr"
+   },
+   {
+    "g1": "b1818",
+    "g2": "b2417",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "manY",
+    "name2": "crr"
+   },
+   {
+    "g1": "b1819",
+    "g2": "b2417",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "manZ",
+    "name2": "crr"
+   },
+   {
+    "g1": "b2465",
+    "g2": "b2935",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "tktB",
+    "name2": "tktA"
+   },
+   {
+    "g1": "b2914",
+    "g2": "b4090",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "rpiA",
+    "name2": "rpiB"
+   },
+   {
+    "g1": "b2987",
+    "g2": "b3493",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "pitB",
+    "name2": "pitA"
+   },
+   {
+    "g1": "b3956",
+    "g2": "b4015",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "ppc",
+    "name2": "aceA"
+   },
+   {
+    "g1": "b0733",
+    "g2": "b0978",
+    "joint_drop": 0.7578,
+    "joint_growth": 0.211663,
+    "name1": "cydA",
+    "name2": "cbdA"
+   },
+   {
+    "g1": "b0733",
+    "g2": "b0979",
+    "joint_drop": 0.7578,
+    "joint_growth": 0.211663,
+    "name1": "cydA",
+    "name2": "cbdB"
+   },
+   {
+    "g1": "b0734",
+    "g2": "b0978",
+    "joint_drop": 0.7578,
+    "joint_growth": 0.211663,
+    "name1": "cydB",
+    "name2": "cbdA"
+   },
+   {
+    "g1": "b0734",
+    "g2": "b0979",
+    "joint_drop": 0.7578,
+    "joint_growth": 0.211663,
+    "name1": "cydB",
+    "name2": "cbdB"
+   }
+  ]
+ },
+ "screenB_strict_tau0.01": {
+  "n": 9,
+  "pairs": [
+   {
+    "g1": "b0118",
+    "g2": "b1276",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "acnB",
+    "name2": "acnA"
+   },
+   {
+    "g1": "b1297",
+    "g2": "b3870",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "puuA",
+    "name2": "glnA"
+   },
+   {
+    "g1": "b1817",
+    "g2": "b2417",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "manX",
+    "name2": "crr"
+   },
+   {
+    "g1": "b1818",
+    "g2": "b2417",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "manY",
+    "name2": "crr"
+   },
+   {
+    "g1": "b1819",
+    "g2": "b2417",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "manZ",
+    "name2": "crr"
+   },
+   {
+    "g1": "b2465",
+    "g2": "b2935",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "tktB",
+    "name2": "tktA"
+   },
+   {
+    "g1": "b2914",
+    "g2": "b4090",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "rpiA",
+    "name2": "rpiB"
+   },
+   {
+    "g1": "b2987",
+    "g2": "b3493",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "pitB",
+    "name2": "pitA"
+   },
+   {
+    "g1": "b3956",
+    "g2": "b4015",
+    "joint_drop": 1.0,
+    "joint_growth": 0.0,
+    "name1": "ppc",
+    "name2": "aceA"
+   }
+  ],
+  "tau": 0.008739
+ }
+}

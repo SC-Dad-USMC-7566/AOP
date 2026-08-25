@@ -1,0 +1,1 @@
+See attached — Resisting Erasure synthesis handoff, 19 July 2026. (Full content in the presented file; this Drive copy carries the same text.)
